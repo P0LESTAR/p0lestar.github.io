@@ -1,5 +1,5 @@
 ---
-title: '[Bug bounty] Slack: HTTP Request Smuggling'
+title: '[Bug bounty💵] Slack: HTTP Request Smuggling'
 author: P0LESTAR
 date: 2026-01-21 00:01:01 +0800
 categories: [Webhacking, bug bounty]
