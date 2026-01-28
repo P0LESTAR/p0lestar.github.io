@@ -1,15 +1,16 @@
 ---
-title: Clawdbot 보안 취약점 - 900개 이상의 인스턴스 노출
+title: Moltbot(Clawdbot) 보안 취약점 - 900개 이상의 인스턴스 노출
 author: P0LESTAR
 date: 2026-01-27 00:01:01 +0800
 categories: [issue]
-tags: [Clawdbot]
+tags: [Moltbot, Clawdbot]
 #pin: true
 sitemap:
   changefreq: monthly
   priority: 0.5
 ---
 
+> 2026-01-28 엔트로픽측에서 상표권요청으로 'Moltbot' 으로 이름을 변경했습니다. 본문에는 'Clawdbot'으로 적혀있습니다.
 
 ## 📌개요
 
