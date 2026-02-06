@@ -4,7 +4,6 @@ author: P0LESTAR
 date: 2025-08-05 20:55:00 +0800
 categories: [환경구축]
 tags: [MCP, Obsidian]
-pin: true
 image:
   path: https://p0lestar.github.io/assets/img/obsidian-mcp.png
 sitemap:
