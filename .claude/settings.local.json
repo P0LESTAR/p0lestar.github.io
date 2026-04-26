@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(bundle install *)",
-      "Bash(bundle exec *)",
-      "mcp__Claude_Preview__preview_start"
-    ]
-  }
-}
