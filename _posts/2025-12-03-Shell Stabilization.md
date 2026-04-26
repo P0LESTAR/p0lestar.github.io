@@ -1,13 +1,9 @@
 ---
 title: 쉘 안정화 (Shell Stabilization)
-author: P0LESTAR
 date: 2025-12-03 00:01:01 +0800
-categories: [Webhacking]
+category: Webhacking
 tags: [쉘 안정화, Shell Stabilization, tty, pty]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.5
 ---
 
 # 리버스 쉘 안정화하기

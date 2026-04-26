@@ -1,13 +1,9 @@
 ---
 title: "[XSS Agent 개발 #1] AI한테 ctf 풀려봤습니다"
-author: P0LESTAR
 date: 2025-11-16 00:01:01 +0800
-categories: [AI]
+category: AI
 tags: [AI, Langchain, XSS]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.1
 published: false
 ---
 

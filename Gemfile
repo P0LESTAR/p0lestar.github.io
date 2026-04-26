@@ -1,17 +1,18 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 
-gemspec
+gem "github-pages", group: :jekyll_plugins
 
-gem "html-proofer", "~> 5.0", group: :test
-gem "sass-embedded", "1.93.2"
-
-platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", ">= 1", "< 3"
-  gem "tzinfo-data"
-  gem "csv"
-  gem "base64"
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-sitemap"
+  gem "jekyll-seo-tag"
+  gem "jekyll-compose"
 end
 
-gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
+gem "webrick", "~> 1.8"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem.
+platforms :windows do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
+end

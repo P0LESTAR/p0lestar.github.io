@@ -1,0 +1,27 @@
+{%- assign p = include.post -%}
+{%- assign i18n = site.data.i18n -%}
+{%- assign date_format = '%Y년 %-m월 %-d일' -%}
+
+<article class="post-card{% if p.pin %} post-card--pinned{% endif %}"
+  data-category="{{ p.category | default: '' }}"
+  data-tags="{{ p.tags | join: ',' }}">
+  <div class="post-card__meta">
+    <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: date_format }}</time>
+    {% if p.category %}<span>·</span><span>{{ p.category }}</span>{% endif %}
+    {% if p.read_time %}<span>·</span><span>{{ p.read_time }} {{ i18n.post.min_read }}</span>{% endif %}
+  </div>
+  <h2 class="post-card__title">
+    <a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a>
+    {% if p.pin %}<span class="post-card__pin" aria-label="고정됨">📌</span>{% endif %}
+  </h2>
+  {% if p.description %}
+    <p class="post-card__excerpt">{{ p.description }}</p>
+  {% endif %}
+  {% if p.tags and p.tags.size > 0 %}
+    <div class="post-card__tags">
+      {% for tag in p.tags %}
+        <a href="{{ '/tags/#' | append: tag | relative_url }}" class="tag">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</article>

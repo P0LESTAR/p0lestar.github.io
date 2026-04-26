@@ -1,13 +1,9 @@
 ---
 title: Posion Null Byte
-author: P0LESTAR
 date: 2025-03-21 20:57:00 +0800
-categories: [Linux heap]
+category: Linux heap
 tags: [pwnable, heap]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.3
 ---
 
 > Poison Null Byte는 리눅스 힙 메모리에서 **null byte (\x00)**를 활용하여 glibc의 malloc과 free의 동작을 조작하는 힙 익스플로잇 기법 중 하나다. 이는 unlink()를 이용한 classic heap overflow 공격이 패치된 후에도 사용할 수 있었던 기법이며, glibc 2.27 이후에는 더 이상 사용되지 않는다.

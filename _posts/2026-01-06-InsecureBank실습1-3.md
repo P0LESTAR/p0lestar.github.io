@@ -1,14 +1,9 @@
 ---
 title: 인시큐어뱅크 취약점 항목별 상세 실습(1~3)
-author: P0LESTAR
 date: 2026-01-06 00:01:01 +0800
-categories: [MobileHacking]
+category: MobileHacking
 tags: [MobileHacking, Android, 인시큐어뱅크 실습]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.1
-
 ---
 
 >『안드로이드 모바일 앱 모의해킹』을 참고해 금융권 앱을 모델로 가상으로 제작된 ‘인시큐어뱅크’ 앱으로 취약점 항목별로 실습을 했습니다.

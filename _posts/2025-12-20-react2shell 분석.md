@@ -1,13 +1,9 @@
 ---
 title: React2Shell 분석 (1/3)
-author: P0LESTAR
 date: 2025-12-20 00:01:01 +0800
-categories: [CVE, 1-day분석]
+category: CVE
 tags: [CVE, CVE-2025-55182, react2shell, 1-day분석]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.5
 ---
 
 ## 개요

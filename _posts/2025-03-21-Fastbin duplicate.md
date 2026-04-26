@@ -1,13 +1,9 @@
 ---
 title: Fastbin duplicate
-author: P0LESTAR
 date: 2025-03-21 20:55:00 +0800
-categories: [Linux heap]
+category: Linux heap
 tags: [pwnable, heap]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.3
 ---
 
 

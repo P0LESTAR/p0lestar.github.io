@@ -1,0 +1,33 @@
+nav:
+  home: 홈
+  tags: 태그
+  archive: 아카이브
+actions:
+  toggle_theme: 테마 전환
+home:
+  title: Carpe diem
+  subtitle: quam minimum credula postero
+  empty: 아직 작성된 글이 없습니다.
+post:
+  min_read: 분 읽기
+  toc: 목차
+  prev: 이전 글
+  next: 다음 글
+tags:
+  title: 태그
+  count_label: 개의 태그
+  post_label: 개의 글
+  empty: 아직 태그가 없습니다.
+archive:
+  title: 아카이브
+  count_label: 개의 글
+search:
+  placeholder: 검색어를 입력하세요...
+filter:
+  all: 전체
+  empty: 해당하는 글이 없습니다.
+pagination:
+  prev: 이전
+  next: 다음
+footer:
+  rights: 모든 권리 보유.

@@ -1,13 +1,9 @@
 ---
 title: House of Einherjar
-author: P0LESTAR
 date: 2025-03-21 20:58:00 +0800
-categories: [Linux heap]
+category: Linux heap
 tags: [pwnable, heap]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.3
 ---
 
 > House of einherjar는 **`_int_free()`가 chunk를 top chunk에 등록하는 과정을 악용하는 기법**입니다.

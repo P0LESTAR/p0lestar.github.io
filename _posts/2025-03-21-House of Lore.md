@@ -1,13 +1,9 @@
 ---
 title: House of Lore
-author: P0LESTAR
 date: 2025-03-21 20:56:00 +0800
-categories: [Linux heap]
+category: Linux heap
 tags: [pwnable, heap]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.3
 ---
 
 > 'House of Lore'는 smallbin 크기의 청크가 존재할때 bk를 조작하여 **fake chunk**를 smallbin에 넣고 할당 요청 시 이를 가로채는 힙 익스플로잇 기법이다

@@ -1,15 +1,9 @@
 ---
 title: '[Bug bounty💵] Starbucks: Webshell via File Upload'
-author: P0LESTAR
 date: 2026-01-26 00:01:01 +0800
-categories: [Webhacking, Webshell, bug bounty]
+category: Webhacking
 tags: [file upload, starbucks]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.5
-image:
-  path: https://p0lestar.github.io/assets/img/hackerone.png
 ---
 
 

@@ -1,0 +1,12 @@
+{%- assign i18n = site.data.i18n -%}
+
+<div class="search">
+  <input
+    type="search"
+    id="search-input"
+    class="search__input"
+    placeholder="{{ i18n.search.placeholder }}"
+    aria-label="{{ i18n.search.placeholder }}"
+    autocomplete="off">
+  <div id="search-results" class="search__results" aria-live="polite"></div>
+</div>

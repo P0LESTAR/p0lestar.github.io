@@ -1,0 +1,23 @@
+/* Code blocks are always dark (macOS terminal style) */
+.highlight {
+  background: transparent;
+
+  .c, .cd, .cm, .c1, .cs { color: #7f848e; font-style: italic; }
+  .err { color: #ff6b6b; }
+  .k, .kd, .kn, .kp, .kr, .kt, .kv { color: #c678dd; }
+  .o, .ow { color: #56b6c2; }
+  .p, .pi { color: #abb2bf; }
+  .gd { color: #ff7b72; background-color: #3a1f23; }
+  .gi { color: #7ee787; background-color: #1b2c20; }
+  .gh { color: #61afef; font-weight: bold; }
+  .nb, .bp { color: #e5c07b; }
+  .nc, .nn, .no { color: #e5c07b; }
+  .nf, .fm { color: #61afef; }
+  .nt { color: #e06c75; }
+  .na { color: #d19a66; }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: #98c379; }
+  .m, .mf, .mh, .mi, .il, .mo, .mx { color: #d19a66; }
+  .kc { color: #d19a66; }
+  .nv, .vc, .vg, .vi { color: #e06c75; }
+  .lineno { color: #4b5263; user-select: none; padding-right: 12px; }
+}

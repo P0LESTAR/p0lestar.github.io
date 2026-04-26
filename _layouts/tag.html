@@ -1,23 +1,45 @@
 ---
-layout: page
-# The layout for Tag page
+layout: default
 ---
+{%- assign i18n = site.data.i18n -%}
+{%- assign posts = site.posts -%}
 
-{% include lang.html %}
+{%- assign all_tags = "" | split: "" -%}
+{%- for post in posts -%}
+  {%- for tag in post.tags -%}
+    {%- unless all_tags contains tag -%}
+      {%- assign all_tags = all_tags | push: tag -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign all_tags = all_tags | sort -%}
 
-<div id="page-tag">
-  <h1 class="ps-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    {{ page.title }}
-    <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
-  </h1>
-  <ul class="content ps-0">
-    {% for post in page.posts %}
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="dash flex-grow-1"></span>
-        {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
-      </li>
+<header class="page-header">
+  <h1 class="page-title">{{ page.title | default: i18n.tags.title }}</h1>
+  <p class="page-subtitle">{{ all_tags.size }} {{ i18n.tags.count_label }}</p>
+</header>
+
+{% if all_tags.size > 0 %}
+  <div class="tag-cloud">
+    {% for tag in all_tags %}
+      <a href="#{{ tag }}" class="tag">#{{ tag }}</a>
     {% endfor %}
-  </ul>
-</div>
+  </div>
+
+  {% for tag in all_tags %}
+    {%- assign tagged = posts | where_exp: "p", "p.tags contains tag" -%}
+    <section class="tag-section" id="{{ tag }}">
+      <h2 class="tag-section__title">
+        #{{ tag }}
+        <span class="tag-section__count">{{ tagged.size }} {{ i18n.tags.post_label }}</span>
+      </h2>
+      <div class="post-list">
+        {% for post in tagged %}
+          {% include post-card.html post=post %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+{% else %}
+  <p class="text-muted">{{ i18n.tags.empty }}</p>
+{% endif %}

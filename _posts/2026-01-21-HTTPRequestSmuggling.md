@@ -1,15 +1,9 @@
 ---
 title: '[Bug bounty💵] Slack: HTTP Request Smuggling'
-author: P0LESTAR
 date: 2026-01-21 00:01:01 +0800
-categories: [Webhacking, bug bounty]
+category: Webhacking
 tags: [HTTP Request Smuggling, Slack]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.5
-image:
-  path: https://p0lestar.github.io/assets/img/hackerone.png
 ---
 
 <https://hackerone.com/reports/737140>

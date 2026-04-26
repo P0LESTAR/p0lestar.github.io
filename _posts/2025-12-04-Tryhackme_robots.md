@@ -1,14 +1,9 @@
 ---
 title: '[TryHackme] Robots'
-author: P0LESTAR
 date: 2025-12-04 00:01:01 +0800
-categories: [Webhacking]
+category: Webhacking
 tags: [tryhackme, wargame]
 #pin: true
-sitemap:
-  changefreq: monthly
-  priority: 0.5
-
 ---
 
 ## 1. 정찰 및 초기 웹 서비스 분석 (Reconnaissance)
