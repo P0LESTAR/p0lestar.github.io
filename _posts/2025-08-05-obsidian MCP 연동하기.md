@@ -1,7 +1,7 @@
 ---
 title: Obsidian MCP 연동하기
 date: 2025-08-05 20:55:00 +0800
-category: 환경구축
+category: etc
 tags: [MCP, Obsidian]
 ---
 
