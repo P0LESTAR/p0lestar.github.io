@@ -62,15 +62,7 @@
       });
 
       if (tagGroup) {
-        if (!activeCategory) {
-          tagGroup.hidden = true;
-          activeTag = '';
-          tagGroup.querySelectorAll('[data-filter-tag]').forEach(function (b) {
-            b.hidden = false;
-            b.classList.remove('is-active');
-          });
-        } else {
-          tagGroup.hidden = false;
+        var updateTagButtons = function () {
           tagGroup.querySelectorAll('[data-filter-tag]').forEach(function (b) {
             var cats = (b.dataset.categories || '').split(',').map(function (s) { return s.trim(); });
             var visible = cats.indexOf(activeCategory) !== -1;
@@ -80,6 +72,26 @@
               b.classList.remove('is-active');
             }
           });
+        };
+
+        if (!activeCategory) {
+          // "전체" 클릭 → 태그 그룹 슬라이드 업
+          tagGroup.classList.remove('is-visible');
+          activeTag = '';
+          tagGroup.querySelectorAll('[data-filter-tag]').forEach(function (b) {
+            b.classList.remove('is-active');
+          });
+        } else if (tagGroup.classList.contains('is-visible')) {
+          // 이미 열려있는 상태 → collapse 후 expand
+          tagGroup.classList.remove('is-visible');
+          setTimeout(function () {
+            updateTagButtons();
+            tagGroup.classList.add('is-visible');
+          }, 350);
+        } else {
+          // 닫혀있는 상태 → 바로 expand
+          updateTagButtons();
+          tagGroup.classList.add('is-visible');
         }
       }
     } else if (btn.hasAttribute('data-filter-tag')) {

@@ -43,7 +43,7 @@ search: true
     </div>
   {% endif %}
   {% if all_tags.size > 0 %}
-    <div class="filter-group filter-group--tags" id="filter-group-tags" hidden>
+    <div class="filter-group filter-group--tags" id="filter-group-tags">
       {% for t in all_tags %}
         {%- assign tag_cats = "" | split: "" -%}
         {%- for post in all_posts -%}
