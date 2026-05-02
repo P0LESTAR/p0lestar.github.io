@@ -1,18 +1,58 @@
-{%- assign i18n = site.data.i18n -%}
+﻿{%- assign i18n = site.data.i18n -%}
 {%- assign headings = include.html | split: '<h2' -%}
 {%- if headings.size > 2 -%}
-  <nav class="post-toc" aria-label="Table of contents">
+  <nav class="post-toc" aria-label="Table of contents" id="post-toc">
     <div class="post-toc__title">{{ i18n.post.toc }}</div>
-    <ul>
-      {%- for chunk in headings offset: 1 -%}
-        {%- assign id_part = chunk | split: 'id="' -%}
-        {%- if id_part.size > 1 -%}
-          {%- assign id = id_part[1] | split: '"' | first -%}
-          {%- assign title_part = chunk | split: '>' -%}
-          {%- assign title = title_part[1] | split: '</h2' | first | strip_html | strip -%}
-          <li><a href="#{{ id }}">{{ title }}</a></li>
-        {%- endif -%}
-      {%- endfor -%}
-    </ul>
+    <ul id="post-toc-list"></ul>
   </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var body = document.querySelector('.post-body');
+      var list = document.getElementById('post-toc-list');
+      if (!body || !list) return;
+
+      var headings = body.querySelectorAll('h2, h3');
+      if (headings.length < 2) {
+        document.getElementById('post-toc').style.display = 'none';
+        return;
+      }
+
+      var currentH2 = null;
+      headings.forEach(function (h) {
+        if (!h.id) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        if (h.tagName === 'H2') {
+          list.appendChild(li);
+          currentH2 = li;
+        } else {
+          if (!currentH2) { list.appendChild(li); return; }
+          var sub = currentH2.querySelector('ul');
+          if (!sub) { sub = document.createElement('ul'); currentH2.appendChild(sub); }
+          sub.appendChild(li);
+        }
+      });
+
+      var links = list.querySelectorAll('a');
+      var activeLink = null;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var target = list.querySelector('a[href="#' + entry.target.id + '"]');
+            if (target && target !== activeLink) {
+              if (activeLink) activeLink.classList.remove('active');
+              activeLink = target;
+              activeLink.classList.add('active');
+            }
+          }
+        });
+      }, { rootMargin: '-60px 0px -60% 0px', threshold: 0 });
+
+      headings.forEach(function (h) { observer.observe(h); });
+    });
+  </script>
 {%- endif -%}
