@@ -132,10 +132,12 @@
 }
 
 .post-body blockquote {
-  padding: 0.5rem 1rem;
-  border-left: 3px solid var(--border-strong);
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--accent);
+  background: var(--bg-subtle);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   color: var(--fg-muted);
-  font-style: italic;
+  font-style: normal;
 }
 
 .post-body img {
