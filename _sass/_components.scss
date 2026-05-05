@@ -1,5 +1,6 @@
 .page-header {
   margin-bottom: 2.5rem;
+  animation: rise-in 0.65s var(--ease) both;
 }
 
 .page-title {
@@ -26,13 +27,22 @@
   transition: border-color var(--dur-med) var(--ease),
     transform var(--dur-med) var(--ease),
     box-shadow var(--dur-med) var(--ease);
+  animation: card-rise 0.7s var(--ease) both;
 }
 
 .post-card:hover {
   border-color: var(--border-strong);
-  transform: translateY(-1px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
+
+.post-card:nth-child(1) { animation-delay: 90ms; }
+.post-card:nth-child(2) { animation-delay: 150ms; }
+.post-card:nth-child(3) { animation-delay: 210ms; }
+.post-card:nth-child(4) { animation-delay: 270ms; }
+.post-card:nth-child(5) { animation-delay: 330ms; }
+.post-card:nth-child(6) { animation-delay: 390ms; }
+.post-card:nth-child(n + 7) { animation-delay: 450ms; }
 
 .post-card__meta {
   display: flex;
@@ -88,15 +98,18 @@
   font-weight: 500;
   background: var(--tag-bg);
   color: var(--tag-fg);
-  transition: transform var(--dur-fast) var(--ease);
+  transition: background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
 }
 
 .tag:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .filter-bar {
   margin-bottom: 1.5rem;
+  animation: rise-in 0.65s var(--ease) 120ms both;
 }
 
 .filter-group {
@@ -121,19 +134,22 @@
   transition: background var(--dur-fast) var(--ease),
     color var(--dur-fast) var(--ease),
     border-color var(--dur-fast) var(--ease),
-    transform var(--dur-fast) var(--ease);
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
 }
 
 .filter-chip:hover {
   background: var(--bg-elevated);
   color: var(--fg);
   border-color: var(--border);
+  transform: translateY(-2px);
 }
 
 .filter-chip.is-active {
   background: var(--accent);
   color: var(--accent-fg);
   border-color: var(--accent);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--accent) 24%, transparent);
 }
 
 .filter-chip--primary {
@@ -202,6 +218,7 @@
 
 .search {
   margin-bottom: 2rem;
+  animation: rise-in 0.65s var(--ease) 190ms both;
 }
 
 .search__input {
@@ -239,6 +256,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--bg-elevated);
+  animation: card-rise 0.42s var(--ease) both;
 }
 
 .search-result__title {

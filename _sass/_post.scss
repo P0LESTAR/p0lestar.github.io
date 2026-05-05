@@ -2,6 +2,7 @@
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border);
+  animation: rise-in 0.65s var(--ease) both;
 }
 
 .post-header__meta {
@@ -33,6 +34,7 @@
   padding: 1rem 1.25rem;
   background: var(--bg-subtle);
   border-radius: var(--radius-md);
+  animation: rise-in 0.65s var(--ease) 120ms both;
 }
 
 .post-toc__title {
@@ -92,6 +94,7 @@
   line-height: 1.85;
   word-break: keep-all;
   overflow-wrap: anywhere;
+  animation: rise-in 0.65s var(--ease) 190ms both;
 }
 
 .post-body > * + * {
@@ -271,12 +274,16 @@
   padding: 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  transition: border-color var(--dur-med) var(--ease), transform var(--dur-med) var(--ease);
+  transition: border-color var(--dur-med) var(--ease),
+    transform var(--dur-med) var(--ease),
+    box-shadow var(--dur-med) var(--ease);
+  animation: card-rise 0.65s var(--ease) both;
 }
 
 .post-nav__item:hover {
   border-color: var(--border-strong);
-  transform: translateY(-1px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .post-nav__label {
